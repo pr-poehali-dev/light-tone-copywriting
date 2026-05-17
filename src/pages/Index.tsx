@@ -298,10 +298,10 @@ export default function Index() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              { icon: "Globe", title: "Сайты-визитки", desc: "Современные, быстрые, адаптивные сайты для бизнеса и личного бренда.", tag: "Landing / Визитка" },
-              { icon: "LayoutDashboard", title: "Веб-приложения", desc: "Сложная логика, личные кабинеты, CRM, сервисы — любой уровень сложности.", tag: "SPA / PWA" },
-              { icon: "Smartphone", title: "Мобильные версии", desc: "Адаптация под любые устройства: смартфоны, планшеты, десктоп.", tag: "Адаптивность" },
-            ].map(({ icon, title, desc, tag }) => (
+              { icon: "Globe", title: "Сайты-визитки", desc: "Современные, быстрые, адаптивные сайты для бизнеса и личного бренда.", tag: "Landing / Визитка", price: "от 10 000 ₽" },
+              { icon: "LayoutDashboard", title: "Веб-приложения", desc: "Сложная логика, личные кабинеты, CRM, сервисы — любой уровень сложности.", tag: "SPA / PWA", price: "от 10 000 ₽" },
+              { icon: "Smartphone", title: "Мобильные версии", desc: "Адаптация под любые устройства: смартфоны, планшеты, десктоп.", tag: "Адаптивность", price: "от 10 000 ₽" },
+            ].map(({ icon, title, desc, tag, price }) => (
               <div key={title} className="p-8 rounded-2xl group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                 style={{ background: "#fff", border: "1px solid rgba(74,55,40,0.08)" }}>
                 <div className="flex items-start justify-between mb-6">
@@ -315,7 +315,8 @@ export default function Index() {
                   </span>
                 </div>
                 <h3 className="font-cormorant font-bold text-2xl mb-3" style={{ color: "var(--walnut)" }}>{title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(74,55,40,0.6)" }}>{desc}</p>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(74,55,40,0.6)" }}>{desc}</p>
+                <div className="font-bold text-sm" style={{ color: "var(--terracotta)" }}>{price}</div>
               </div>
             ))}
           </div>
