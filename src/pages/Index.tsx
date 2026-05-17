@@ -117,7 +117,7 @@ export default function Index() {
         <button onClick={() => scrollTo("hero")}
           className="font-cormorant font-bold text-xl tracking-tight"
           style={{ color: "var(--walnut)" }}>
-          А.К.
+          О.Г.
         </button>
 
         <div className="hidden md:flex items-center gap-8">
@@ -206,8 +206,8 @@ export default function Index() {
             </h1>
 
             <p className="text-lg leading-relaxed mb-10 max-w-md" style={{ color: "rgba(74,55,40,0.7)" }}>
-              Помогаю бизнесу говорить с аудиторией честно, сильно и убедительно.
-              Тексты для лендингов, блогов, рассылок и соцсетей.
+              Превращаю скучные идеи в захватывающие истории, которые увлекают клиентов.
+              Тексты для лендингов, блогов, рассылок и соцсетей — ярко, запоминающе, с результатом.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -491,7 +491,7 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="py-8 text-center" style={{ background: "var(--walnut)", color: "rgba(245,240,232,0.4)" }}>
         <p className="text-sm font-medium">
-          © 2024 Анастасия К. ·{" "}
+          © 2024 Олег Горохов ·{" "}
           <span className="font-cormorant italic" style={{ color: "rgba(245,240,232,0.6)" }}>
             Слова, которые продают
           </span>
