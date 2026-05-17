@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/e2617d24-8c57-43c3-ac53-2ae92f91585a/bucket/ec97c72b-32d1-4182-b27e-f26ecd15f5ac.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/e2617d24-8c57-43c3-ac53-2ae92f91585a/bucket/648ceba6-3575-4138-a53e-288d1b83d0fb.png";
 
 const floatingWords = ["слова", "смыслы", "эмоции", "идеи", "истории", "образы", "тексты", "голос"];
 
