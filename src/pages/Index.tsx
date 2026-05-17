@@ -38,13 +38,6 @@ const services = [
 
 const portfolio = [
   {
-    category: "Лендинг",
-    title: "Онлайн-школа английского",
-    result: "+340% конверсия",
-    color: "#c4694f",
-    bg: "#fdf0eb",
-  },
-  {
     category: "Email",
     title: "Цепочка прогрева для IT-курсов",
     result: "Open Rate 48%",
