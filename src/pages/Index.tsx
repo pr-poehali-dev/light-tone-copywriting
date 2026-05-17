@@ -84,7 +84,7 @@ export default function Index() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "services", "portfolio", "contact"];
+      const sections = ["hero", "services", "portfolio", "contact"];
       for (const id of sections.reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {
@@ -103,7 +103,6 @@ export default function Index() {
   };
 
   const navLinks = [
-    { id: "about", label: "Обо мне" },
     { id: "services", label: "Услуги" },
     { id: "portfolio", label: "Портфолио" },
     { id: "contact", label: "Контакты" },
@@ -278,66 +277,6 @@ export default function Index() {
           ))}
         </div>
       </div>
-
-      {/* ABOUT */}
-      <section id="about" className="py-24 md:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 font-cormorant font-bold italic text-9xl opacity-5 select-none"
-                style={{ color: "var(--terracotta)" }}>
-                обо
-              </div>
-              <div className="relative z-10">
-                <span className="text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "var(--terracotta)" }}>
-                  — Обо мне
-                </span>
-                <h2 className="font-cormorant font-bold mb-6" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--walnut)", lineHeight: 1.1 }}>
-                  Текст — это<br />
-                  <em className="italic">инструмент</em>,<br />
-                  а не украшение
-                </h2>
-                <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(74,55,40,0.72)" }}>
-                  Меня зовут Анастасия. Я копирайтер с 5-летним опытом в digital-маркетинге.
-                  Пишу тексты, которые не просто красиво выглядят, но и решают бизнес-задачи.
-                </p>
-                <p className="text-base leading-relaxed mb-8" style={{ color: "rgba(74,55,40,0.72)" }}>
-                  Каждый проект начинается с вопроса: «Что должен почувствовать и сделать читатель?»
-                  Потому что хороший текст — это всегда диалог, а не монолог.
-                </p>
-
-                <div className="flex flex-wrap gap-3">
-                  {["Психология влияния", "Сторителлинг", "SEO-оптимизация", "Customer Journey", "A/B тестирование"].map((tag) => (
-                    <span key={tag} className="px-4 py-1.5 rounded-full text-sm font-medium"
-                      style={{ background: "rgba(196,105,79,0.1)", color: "var(--terracotta)" }}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: "Award", title: "Грамотность", desc: "Всегда корректура и проверка перед сдачей" },
-                { icon: "Clock", title: "Дедлайны", desc: "Сдаю работу в срок или раньше" },
-                { icon: "TrendingUp", title: "Результат", desc: "Ориентируюсь на метрики, а не на слова" },
-                { icon: "Heart", title: "Вовлечённость", desc: "Погружаюсь в каждый проект как в свой" },
-              ].map(({ icon, title, desc }) => (
-                <div key={title} className="p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-md"
-                  style={{ background: "#fff", border: "1px solid rgba(74,55,40,0.08)" }}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background: "rgba(196,105,79,0.1)" }}>
-                    <Icon name={icon} size={18} style={{ color: "var(--terracotta)" }} />
-                  </div>
-                  <div className="font-semibold text-sm mb-1" style={{ color: "var(--walnut)" }}>{title}</div>
-                  <div className="text-xs leading-relaxed opacity-60">{desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SERVICES */}
       <section id="services" className="py-24 md:py-32" style={{ background: "var(--walnut)" }}>
