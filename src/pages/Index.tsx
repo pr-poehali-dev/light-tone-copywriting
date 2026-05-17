@@ -84,7 +84,7 @@ export default function Index() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "services", "portfolio", "contact"];
+      const sections = ["hero", "webdev", "services", "portfolio", "contact"];
       for (const id of sections.reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {
@@ -103,6 +103,7 @@ export default function Index() {
   };
 
   const navLinks = [
+    { id: "webdev", label: "Разработка" },
     { id: "services", label: "Услуги" },
     { id: "portfolio", label: "Портфолио" },
     { id: "contact", label: "Контакты" },
@@ -277,6 +278,66 @@ export default function Index() {
           ))}
         </div>
       </div>
+
+      {/* WEBDEV */}
+      <section id="webdev" className="py-24 md:py-32 relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "var(--terracotta)" }}>
+              — Веб-разработка
+            </span>
+            <h2 className="font-cormorant font-bold mb-4" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--walnut)", lineHeight: 1.1 }}>
+              Создаю сайты<br />
+              <em className="italic" style={{ color: "var(--terracotta)" }}>и приложения</em>
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(74,55,40,0.65)" }}>
+              Разрабатываю современные веб-сайты и приложения под ключ — от идеи до запуска.
+              Быстро, красиво и с результатом.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {[
+              { icon: "Globe", title: "Сайты-визитки", desc: "Современные, быстрые, адаптивные сайты для бизнеса и личного бренда.", tag: "Landing / Визитка" },
+              { icon: "LayoutDashboard", title: "Веб-приложения", desc: "Сложная логика, личные кабинеты, CRM, сервисы — любой уровень сложности.", tag: "SPA / PWA" },
+              { icon: "Smartphone", title: "Мобильные версии", desc: "Адаптация под любые устройства: смартфоны, планшеты, десктоп.", tag: "Адаптивность" },
+            ].map(({ icon, title, desc, tag }) => (
+              <div key={title} className="p-8 rounded-2xl group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                style={{ background: "#fff", border: "1px solid rgba(74,55,40,0.08)" }}>
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
+                    style={{ background: "rgba(196,105,79,0.1)" }}>
+                    <Icon name={icon} size={22} style={{ color: "var(--terracotta)" }} />
+                  </div>
+                  <span className="text-xs font-medium px-3 py-1 rounded-full"
+                    style={{ background: "rgba(196,105,79,0.08)", color: "var(--terracotta)" }}>
+                    {tag}
+                  </span>
+                </div>
+                <h3 className="font-cormorant font-bold text-2xl mb-3" style={{ color: "var(--walnut)" }}>{title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(74,55,40,0.6)" }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8"
+            style={{ background: "var(--walnut)" }}>
+            <div>
+              <h3 className="font-cormorant font-bold text-3xl mb-2" style={{ color: "var(--cream)" }}>
+                Готов обсудить ваш проект
+              </h3>
+              <p className="text-sm" style={{ color: "rgba(245,240,232,0.55)" }}>
+                Расскажите идею — оценю сроки и стоимость бесплатно
+              </p>
+            </div>
+            <button onClick={() => scrollTo("contact")}
+              className="flex-shrink-0 px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105"
+              style={{ background: "var(--terracotta)", color: "#fff" }}>
+              Обсудить проект
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES */}
       <section id="services" className="py-24 md:py-32" style={{ background: "var(--walnut)" }}>
