@@ -4,35 +4,41 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 36 30% 96%;
+    --foreground: 20 15% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 36 25% 98%;
+    --card-foreground: 20 15% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 36 25% 98%;
+    --popover-foreground: 20 15% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 20 25% 28%;
+    --primary-foreground: 36 30% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 36 20% 90%;
+    --secondary-foreground: 20 15% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 36 15% 88%;
+    --muted-foreground: 20 10% 48%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 22 55% 55%;
+    --accent-foreground: 36 30% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 20% 82%;
+    --input: 30 20% 82%;
+    --ring: 22 55% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
+
+    --cream: #f5f0e8;
+    --terracotta: #c4694f;
+    --walnut: #4a3728;
+    --sand: #d4b896;
+    --sage: #8a9e8a;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +103,56 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out forwards;
 }
