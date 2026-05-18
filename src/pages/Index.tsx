@@ -267,10 +267,13 @@ export default function Index() {
             <div className="absolute w-96 h-96 rounded-full border opacity-10 animate-float"
               style={{ borderColor: "var(--sand)" }} />
 
-            <div className="relative w-72 h-96 overflow-hidden"
-              style={{ borderRadius: "60% 40% 55% 45% / 50% 55% 45% 50%", boxShadow: "0 30px 80px rgba(74,55,40,0.2)" }}>
-              <img src={HERO_IMAGE} alt="Копирайтер" className="w-full h-full object-cover" />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(74,55,40,0.3), transparent)" }} />
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative w-72 h-96 overflow-hidden"
+                style={{ borderRadius: "60% 40% 55% 45% / 50% 55% 45% 50%", boxShadow: "0 30px 80px rgba(74,55,40,0.2)" }}>
+                <img src={HERO_IMAGE} alt="Копирайтер" className="w-full h-full object-cover" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(74,55,40,0.3), transparent)" }} />
+              </div>
+              <div className="font-cormorant font-bold text-3xl italic" style={{ color: "var(--walnut)" }}>Олег</div>
             </div>
 
             {/* floating badge */}
