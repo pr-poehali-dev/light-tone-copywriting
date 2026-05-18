@@ -57,6 +57,7 @@ const portfolio = [
     result: "Open Rate 48%",
     color: "#4a3728",
     bg: "#f0ebe4",
+    image: "",
   },
   {
     category: "Блог",
@@ -64,6 +65,7 @@ const portfolio = [
     result: "x5 органический трафик",
     color: "#8a9e8a",
     bg: "#edf2ed",
+    image: "",
   },
   {
     category: "SMM",
@@ -71,6 +73,15 @@ const portfolio = [
     result: "x3 вовлечённость",
     color: "#9b7e5c",
     bg: "#f5f0e8",
+    image: "",
+  },
+  {
+    category: "Веб-разработка",
+    title: "Создание сайтов под ключ",
+    result: "от 20 000 ₽",
+    color: "#5a7a9e",
+    bg: "#eef2f7",
+    image: "https://cdn.poehali.dev/projects/e2617d24-8c57-43c3-ac53-2ae92f91585a/bucket/fe24a3ee-2b76-4949-afcf-c60bc3eb448a.jpg",
   },
 ];
 
@@ -416,39 +427,67 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            {portfolio.map(({ category, title, result, color, bg }, i) => (
-              <div key={title} className="group relative overflow-hidden rounded-2xl p-8 cursor-pointer transition-all duration-400 hover:scale-[1.01] hover:shadow-xl"
+            {portfolio.map(({ category, title, result, color, bg, image }, i) => (
+              <div key={title} className="group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-400 hover:scale-[1.01] hover:shadow-xl"
                 style={{ background: bg, border: "1px solid rgba(74,55,40,0.08)", minHeight: "200px" }}>
 
-                {/* large number bg */}
-                <div className="absolute -right-4 -bottom-8 font-cormorant font-bold text-9xl opacity-5 select-none"
-                  style={{ color }}>
-                  0{i + 1}
-                </div>
-
-                <div className="relative z-10 flex flex-col h-full justify-between" style={{ minHeight: "160px" }}>
-                  <div>
-                    <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4"
-                      style={{ background: `${color}18`, color }}>
-                      {category}
-                    </span>
-                    <h3 className="font-cormorant font-bold text-2xl md:text-3xl leading-tight mb-4"
-                      style={{ color: "var(--walnut)" }}>
-                      {title}
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full" style={{ background: color }} />
-                      <span className="font-bold text-sm" style={{ color }}>{result}</span>
+                {image ? (
+                  <>
+                    <div className="relative h-56 overflow-hidden">
+                      <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(74,55,40,0.6), transparent)" }} />
                     </div>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0"
-                      style={{ background: color }}>
-                      <Icon name="ArrowRight" size={14} color="#fff" />
+                    <div className="p-6">
+                      <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3"
+                        style={{ background: `${color}18`, color }}>
+                        {category}
+                      </span>
+                      <h3 className="font-cormorant font-bold text-2xl md:text-3xl leading-tight mb-3"
+                        style={{ color: "var(--walnut)" }}>
+                        {title}
+                      </h3>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full" style={{ background: color }} />
+                          <span className="font-bold text-sm" style={{ color }}>{result}</span>
+                        </div>
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0"
+                          style={{ background: color }}>
+                          <Icon name="ArrowRight" size={14} color="#fff" />
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="p-8">
+                    <div className="absolute -right-4 -bottom-8 font-cormorant font-bold text-9xl opacity-5 select-none"
+                      style={{ color }}>
+                      0{i + 1}
+                    </div>
+                    <div className="relative z-10 flex flex-col h-full justify-between" style={{ minHeight: "160px" }}>
+                      <div>
+                        <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4"
+                          style={{ background: `${color}18`, color }}>
+                          {category}
+                        </span>
+                        <h3 className="font-cormorant font-bold text-2xl md:text-3xl leading-tight mb-4"
+                          style={{ color: "var(--walnut)" }}>
+                          {title}
+                        </h3>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full" style={{ background: color }} />
+                          <span className="font-bold text-sm" style={{ color }}>{result}</span>
+                        </div>
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0"
+                          style={{ background: color }}>
+                          <Icon name="ArrowRight" size={14} color="#fff" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
