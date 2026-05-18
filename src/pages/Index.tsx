@@ -226,9 +226,9 @@ export default function Index() {
 
             <h1 className="font-cormorant font-bold leading-none mb-6"
               style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--walnut)" }}>
-              ох<br />
-              <em className="italic" style={{ color: "var(--terracotta)" }}>точка</em><br />
-              горох
+              Слова,<br />
+              <em className="italic" style={{ color: "var(--terracotta)" }}>которые</em><br />
+              продают
             </h1>
 
             <p className="text-lg leading-relaxed mb-10 max-w-md" style={{ color: "rgba(74,55,40,0.7)" }}>
